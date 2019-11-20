@@ -20,3 +20,5 @@ npm run serve
 floatingBodyClass|悬浮窗的融资样式|默认为{}
 rate|悬浮窗的移动速度|默认为10
 interval|悬浮窗的移动间隔时间，单位为毫秒|默认为60
+enter|输入移入浮窗的事件|默认为空
+leave|输入移出浮窗的事件|默认为空

@@ -1,6 +1,8 @@
 <template>
   <div
     class="common-floating-container"
+    @mouseenter="mounseenter"
+    @mouseleave="mouseleave"
     ref="floating"
     :style="{ width, transform: `translate(${xDeg}px, ${yDeg}px)`, ...floatingBodyClass }">
     <slot></slot>
@@ -50,7 +52,6 @@ export default {
       const innerWidth = document.body.scrollWidth - this.$refs.floating.clientWidth;
       // max screen height
       const innerHeight = document.body.scrollHeight - this.$refs.floating.clientHeight;
-      console.log(this.$refs.floating.clientHeight);
       // max value
       let maxValueX; let
         maxValueY;
@@ -81,6 +82,15 @@ export default {
     resizeHandle() {
       this.timer && clearInterval(this.timer);
       this.initFloat();
+    },
+    // mounseenter event
+    mounseenter(e) {
+      this.timer && clearInterval(this.timer);
+      this.$emit('enter', e);
+    },
+    mouseleave(e) {
+      this.initFloat();
+      this.$emit('leave', e);
     },
   },
 };
