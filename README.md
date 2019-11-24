@@ -22,3 +22,6 @@ interval|悬浮窗的移动间隔时间，单位为毫秒|默认为20
 enter|输入移入浮窗的事件|function
 leave|输入移出浮窗的事件|function
 close|点击关闭浮窗的回调|function
+
+### Changelog
+* 2019-11-24 浮窗组件添加关闭，鼠标移入移出回调功能
