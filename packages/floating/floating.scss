@@ -3,6 +3,18 @@
   position: fixed;
   top: 0;
   left: 0;
+  height: 204px;
   box-shadow: 1px 1px 3px #ccc;
-  cursor: pointer;
+  .close-icon {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
 }

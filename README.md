@@ -18,7 +18,7 @@ npm run serve
 属性|描述|默认
 -|-|-
 floatingBodyClass|悬浮窗的融资样式|默认为{}
-rate|悬浮窗的移动速度|默认为10
-interval|悬浮窗的移动间隔时间，单位为毫秒|默认为60
-enter|输入移入浮窗的事件|默认为空
-leave|输入移出浮窗的事件|默认为空
+interval|悬浮窗的移动间隔时间，单位为毫秒|默认为20
+enter|输入移入浮窗的事件|function
+leave|输入移出浮窗的事件|function
+close|点击关闭浮窗的回调|function

@@ -2,19 +2,29 @@
   <div class="about">
     <h1>This is an floating component</h1>
     <Floating
-      :floatingBodyClass="{ background: 'red' }"
+      :floatingBodyClass="floatingBodyClass"
       @enter="mounseenterHandle"
-      @leave="mounseleaveHandle">
-      <img src="../assets/logo.png" alt="logo">
+      @leave="mounseleaveHandle"
+      @close="closeWindow"
+    >
+      <!-- <img src="../assets/logo.png" alt="logo"> -->
     </Floating>
   </div>
 </template>
 
 <script>
-import Floating from '../../packages/floating/Floating.vue';
+import Floating from "../../packages/floating/Floating.vue";
 
 export default {
   components: { Floating },
+  data() {
+    return {
+      floatingBodyClass: {
+        backgroundImage: "url(" + require("../assets/floating-bg.jpg") + ")",
+        backgroundSize: "cover"
+      }
+    };
+  },
   methods: {
     /* eslint-disable */
     mounseenterHandle(e) {
@@ -24,6 +34,9 @@ export default {
     mounseleaveHandle(e) {
       console.log(e);
     },
-  },
+    closeWindow (e) {
+      console.log(e)
+    }
+  }
 };
 </script>
