@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       floatingBodyClass: {
+        /* eslint-disable */
         backgroundImage: `url(${require('../assets/floating-bg.jpg')})`,
         backgroundSize: 'cover',
       },
