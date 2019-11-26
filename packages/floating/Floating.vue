@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  name: 'Floating',
   data() {
     return {
       xDeg: 0,

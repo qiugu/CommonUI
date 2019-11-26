@@ -13,10 +13,7 @@
 </template>
 
 <script>
-import Floating from '../../packages/floating/Floating.vue';
-
 export default {
-  components: { Floating },
   data() {
     return {
       floatingBodyClass: {
