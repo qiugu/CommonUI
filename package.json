@@ -1,7 +1,8 @@
 {
   "name": "common-ui",
   "version": "1.0.0",
-  "private": true,
+  "author": "qiugu",
+  "keywords": ["vue", "components"],
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.js"
   },

@@ -1,20 +1,23 @@
 # common-ui
 
-## Project setup
+## Installation
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Usage
+```javascript
+import Vue from 'vue'
+import commonui from 'commonui'
+
+Vue.use(commonui)
 ```
 
-### 项目描述
-记录工作中常用的一些原生vue组件，不受UI框架限制，业务组件比较多，如果组件有什么不了解可以联系我
+### Description
+记录常用的一些原生vue业务组件，目前还在初级阶段，组件名字没有确定，如果有小伙伴有想法可以联系我。暂时项目未发布到npm，需要使用的话，请直接下载项目使用，后续会将项目发布到npm上。
 
-### 组件
-#### floating组件
+### Components
+#### floating
 属性|描述|默认
 -|-|-
 floatingBodyClass|悬浮窗的融资样式|{}
