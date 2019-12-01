@@ -15,6 +15,7 @@
     cursor: pointer;
     &:hover {
       transform: rotate(180deg);
+      transition: all .3s;
     }
   }
 }

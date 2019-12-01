@@ -1,7 +1,10 @@
-import Floating from '../packages/floating/Floating.vue'
+import '../packages/icons'
+import QFloating from '../packages/floating/Floating.vue'
+import QDrawer from '../packages/drawer/Drawer.vue'
 
 const components = [
-  Floating
+  QFloating,
+  QDrawer
 ]
 
 const install = (Vue, options = {}) => {
@@ -17,5 +20,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   version: '1.0.0',
   install,
-  Floating
+  QFloating,
+  QDrawer
 }

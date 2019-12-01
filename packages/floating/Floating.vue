@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'Floating',
+  name: 'QFloating',
   data() {
     return {
       xDeg: 0,

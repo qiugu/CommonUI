@@ -5,7 +5,8 @@ const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    app: ['@babel/polyfill', path.resolve(__dirname, '../examples/main.js')]
+    // app: ['@babel/polyfill', path.resolve(__dirname, '../examples/main.js')]
+    app: path.resolve(__dirname, '../examples/main.js')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -54,12 +55,29 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: [path.resolve('packages/icons')],
         use: [
           {
-            loader: 'url-loader'
+            loader: 'url-loader',
+            options: {
+              fallback: {
+                loader: 'file-loader',
+                options: {
+                  name: 'img/[name].[hash:8].[ext]'
+                }
+              }
+            }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [path.resolve('packages/icons')],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       },
       {
         test: /\.vue$/,
@@ -85,8 +103,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html'),
-      favicon: path.resolve(__dirname, '../public/favicon.ico')
+      template: path.resolve(__dirname, '../examples/index.html'),
+      favicon: path.resolve(__dirname, '../examples/favicon.ico')
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
@@ -94,6 +112,6 @@ module.exports = {
   devServer: {
     port: 2000,
     hot: true,
-    contentBase: './dist'
+    historyApiFallback: true
   }
 }

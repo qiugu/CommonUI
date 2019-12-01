@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue'
 
 Vue.use(VueRouter);
 
@@ -12,10 +11,15 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'about',
-    component: About
+    path: '/floating',
+    name: 'floating',
+    component: () => import(/* webpackChunkName: 'floating' */'../views/floatingComp.vue')
   },
+  {
+    path: '/drawer',
+    name: 'drawer',
+    component: () => import(/* webpackChunkName: 'drawer' */'../views/drawerComp.vue')
+  }
 ];
 
 const router = new VueRouter({

@@ -1,14 +1,14 @@
 <template>
   <div class="about">
     <h1>This is an floating component</h1>
-    <Floating
+    <q-floating
       :floatingBodyClass="floatingBodyClass"
       @enter="mounseenterHandle"
       @leave="mounseleaveHandle"
       @close="closeWindow"
     >
       <!-- <img src="../assets/logo.png" alt="logo"> -->
-    </Floating>
+    </q-floating>
   </div>
 </template>
 

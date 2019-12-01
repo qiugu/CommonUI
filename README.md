@@ -20,12 +20,20 @@ Vue.use(commonui)
 #### floating
 属性|描述|默认
 -|-|-
-floatingBodyClass|悬浮窗的融资样式|{}
+floatingBodyClass|悬浮窗的样式|{}
 interval|悬浮窗的移动间隔时间，单位为毫秒|20
 enter|输入移入浮窗的事件|function
 leave|输入移出浮窗的事件|function
 close|点击关闭浮窗的回调|function
 
+#### drawer
+属性|描述|默认
+-|-|-
+customContentClass|抽屉的内容样式|{}
+open-drawer|打开抽屉的回调|function
+close-drawer|关闭抽屉的回调|function
+
 ### Changelog
 * 2019-11-24 浮窗组件添加关闭，鼠标移入移出回调功能
 * 2019-11-26 初步修改项目结构，将实例项目独立出来
+* 2019-12-01 新增抽屉组件，目前样式固定，抽屉打开关闭样式问题为解决
