@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is an floating component</h1>
     <q-floating
-      :floatingBodyClass="floatingBodyClass"
+      floatingBodyClass="floatingBodyClass"
       @enter="mounseenterHandle"
       @leave="mounseleaveHandle"
       @close="closeWindow"
@@ -15,13 +15,7 @@
 <script>
 export default {
   data() {
-    return {
-      floatingBodyClass: {
-        /* eslint-disable */
-        backgroundImage: `url(${require('../assets/floating-bg.jpg')})`,
-        backgroundSize: 'cover',
-      },
-    };
+    return {}
   },
   methods: {
     /* eslint-disable */
@@ -38,3 +32,9 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.floatingBodyClass {
+  background: url(../assets/floating-bg.jpg);
+  background-size: cover;
+}
+</style>

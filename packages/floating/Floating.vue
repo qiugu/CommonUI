@@ -2,10 +2,11 @@
   <div
     v-if="visible"
     class="common-floating-container"
+    :class="floatingBodyClass"
     @mouseenter="mounseenter"
     @mouseleave="mouseleave"
     ref="floating"
-    :style="{ width, transform: `translate(${xDeg}px, ${yDeg}px)`, ...floatingBodyClass }"
+    :style="{ width, transform: `translate(${xDeg}px, ${yDeg}px)` }"
   >
     <i aria-label="icon: close-circle" class="close-icon" @click="closeHandler">
       <svg
@@ -55,10 +56,8 @@ export default {
       default: 20
     },
     floatingBodyClass: {
-      type: Object,
-      default() {
-        return {};
-      }
+      type: String,
+      default: ''
     }
   },
   mounted() {
