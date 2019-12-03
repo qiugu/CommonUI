@@ -1,6 +1,6 @@
 //  按钮抽屉的按钮部分动画
 @keyframes drawerBtn {
-  0% { transform: translateX(130px); }
+  0% { transform: translateX(134px); }
   100% { transform: translateX(0); }
 }
 .drawer-in-icon-enter-active {
@@ -36,11 +36,10 @@
   .drawer-icon {
     font-size: 25px;
     cursor: pointer;
-    display: inline;
     vertical-align: middle;
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    margin-top: -12px;
     &.left {
       right: 0;
     }

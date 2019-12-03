@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-drawer @open-drawer="handleOpen" @close-drawer="handleClose">
+    <q-drawer @open-drawer="handleOpen" @close-drawer="handleClose" :customContentClass="containerClass">
       <button>在线客服1</button>
       <button>在线客服2</button>
       <button>在线客服3</button>
@@ -11,6 +11,13 @@
 
 <script>
 export default {
+  data () {
+    return {
+      containerClass: {
+        width: '300px'
+      }
+    }
+  },
   methods: {
     handleOpen () {
       console.log('drawer opening')
@@ -22,6 +29,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scooped>
 </style>
