@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import commonui from '../src/index';
+import businessui from '../src/index';
 
 Vue.config.productionTip = false;
-Vue.use(commonui)
+Vue.use(businessui)
 
 new Vue({
   router,

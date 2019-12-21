@@ -1,20 +1,20 @@
-# common-ui
+# business-ui
 
 ## Installation
 ```
-npm install
+npm install business-ui --save
 ```
 
 ### Usage
 ```javascript
 import Vue from 'vue'
-import commonui from 'commonui'
+import businessui from 'businessui'
 
-Vue.use(commonui)
+Vue.use(businessui)
 ```
 
 ### Description
-记录常用的一些原生vue业务组件，目前还在初级阶段，组件名字没有确定，如果有小伙伴有想法可以联系我。暂时项目未发布到npm，需要使用的话，请直接下载项目使用，后续会将项目发布到npm上。
+记录常用的一些原生vue业务组件，目前还在初级阶段，组件名字暂定，如果有小伙伴有疑问可以联系我，也可以加入我一起来写自己的组件库。
 
 ### Components
 #### floating
@@ -38,4 +38,4 @@ close-drawer|关闭抽屉的回调|function
 * 2019-11-26 初步修改项目结构，将实例项目独立出来
 * 2019-12-01 新增抽屉组件，目前样式固定，抽屉打开关闭样式问题待解决
 * 2019-12-03 修复抽屉组件按钮动画效果。自定义宽度时，动画不流畅的问题待修复
-* 2019-12-21 修复抽屉组件自定义宽度动画问题
+* 2019-12-21 修复抽屉组件自定义宽度动画问题。发布npm包，原名称已经注册，修改为businessui
