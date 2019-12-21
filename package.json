@@ -1,6 +1,6 @@
 {
-  "name": "businessui",
-  "version": "1.0.0",
+  "name": "@qiugu/businessui",
+  "version": "1.0.2",
   "author": "qiugu",
   "keywords": [
     "vue",
@@ -79,5 +79,6 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "homepage": "https://github.com/qiugu/CommonUI"
 }
