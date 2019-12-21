@@ -1,20 +1,40 @@
 <template>
-  <div class="drawer-container">
-    <transition name="drawer-in-icon" mode="out-in">
-      <span class="drawer-icon right" ref="rightBtn" v-show="drawerVisible" @click="showDrawer">
+  <div 
+    class="drawer-container"
+    ref="container"
+    :style="customContainerClass"
+  >
+    <transition 
+      name="drawer-in-icon"
+      mode="out-in"
+    >
+      <span 
+        class="drawer-icon right" 
+        ref="rightBtn" 
+        @click="showDrawer"
+        :style="{ right: `${offsetRight}px` }"
+        v-show="drawerVisible"
+      >
         <svg-icon icon-class="right" />
       </span>
     </transition>
-    <transition name="drawer-out-icon" mode="out-in">
-      <span class="drawer-icon left" ref="leftBtn" v-show="!drawerVisible" @click="showDrawer">
+    <transition 
+      name="drawer-out-icon"
+      mode="out-in"
+    >
+      <span 
+        class="drawer-icon left" 
+        ref="leftBtn"
+        @click="showDrawer"
+        :style="{ right: `${offsetLeft}px` }"
+        v-show="!drawerVisible" 
+      >
         <svg-icon icon-class="left" />
       </span>
     </transition>
     <transition name="drawer-content">
       <div
         class="drawer-content-wrapper"
-        ref="content"
-        :style="customContentClass"
         v-show="drawerVisible"
       >
         <slot></slot>
@@ -28,11 +48,14 @@ export default {
   name: "QDrawer",
   data() {
     return {
-      drawerVisible: false
+      drawerVisible: false,
+      offsetLeft: 0,
+      offsetRight: 130,
+      styleWidth: 0
     };
   },
   props: {
-    customContentClass: {
+    customContainerClass: {
       type: Object,
       default() {
         return {};
@@ -41,15 +64,20 @@ export default {
   },
   watch: {
     drawerVisible: function(val) {
-      val ? this.$emit("open-drawer") : this.$emit("close-drawer");
+      if (val) {
+        this.$emit("open-drawer")
+        this.$refs.rightBtn.style.right = this.styleWidth || 130
+      } else {
+        this.$emit("close-drawer")
+      }
     }
   },
-  mounted() {
-    this.$refs.rightBtn.style.right = this.$refs.content.style.width || '134px'
+  mounted () {
+    this.styleWidth = window.getComputedStyle(this.$refs.container).width
   },
   methods: {
     showDrawer() {
-      this.drawerVisible = !this.drawerVisible;
+      this.drawerVisible = !this.drawerVisible
     }
   }
 };

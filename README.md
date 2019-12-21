@@ -29,7 +29,7 @@ close|点击关闭浮窗的回调|function
 #### drawer
 属性|描述|默认
 -|-|-
-customContentClass|抽屉的内容样式|object
+customContainerClass|抽屉的容器样式|object
 open-drawer|打开抽屉的回调|function
 close-drawer|关闭抽屉的回调|function
 
@@ -38,3 +38,4 @@ close-drawer|关闭抽屉的回调|function
 * 2019-11-26 初步修改项目结构，将实例项目独立出来
 * 2019-12-01 新增抽屉组件，目前样式固定，抽屉打开关闭样式问题待解决
 * 2019-12-03 修复抽屉组件按钮动画效果。自定义宽度时，动画不流畅的问题待修复
+* 2019-12-21 修复抽屉组件自定义宽度动画问题
