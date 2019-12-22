@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import businessui from '../src/index';
+import businessui from '../lib/main';
 
 Vue.config.productionTip = false;
 Vue.use(businessui)

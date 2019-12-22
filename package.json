@@ -6,8 +6,11 @@
     "vue",
     "components"
   ],
+  "main": "lib/main.js",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.demo.js"
+    "dev": "webpack-dev-server --config build/webpack.demo.js",
+    "dist": "webpack --config build/webpack.component.js",
+    "commit": "npx git-cz"
   },
   "dependencies": {
     "core-js": "^3.4.5"
@@ -30,6 +33,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "postcss": "^7.0.23",
     "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
