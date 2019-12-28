@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import businessui from '../lib/main';
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import businessui from '../src/index'
 
 Vue.config.productionTip = false;
 Vue.use(businessui)
@@ -9,4 +9,4 @@ Vue.use(businessui)
 new Vue({
   router,
   render: h => h(App),
-}).$mount('#app');
+}).$mount('#app')

@@ -1,26 +1,39 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Layout from '../layouts/index.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
-  },
-  {
-    path: '/floating',
-    name: 'floating',
-    component: () => import(/* webpackChunkName: 'floating' */'../views/floatingComp.vue')
-  },
-  {
-    path: '/drawer',
-    name: 'drawer',
-    component: () => import(/* webpackChunkName: 'drawer' */'../views/drawerComp.vue')
+    redirect: '/home',
+    name: 'layouts',
+    component: Layout,
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        component: () => import(/* webpackChunkName: 'floating' */'../views/Home.vue'),
+      },
+      {
+        path: '/floating',
+        name: 'floating',
+        component: () => import(/* webpackChunkName: 'floating' */'../views/floatingComp.vue')
+      },
+      {
+        path: '/drawer',
+        name: 'drawer',
+        component: () => import(/* webpackChunkName: 'drawer' */'../views/drawerComp.vue')
+      },
+      {
+        path: '/filter',
+        name: 'filter',
+        component: () => import(/* webpackChunkName: 'filter' */'../views/filterComp.vue')
+      },
+    ]
   }
-];
+]
 
 const router = new VueRouter({
   mode: 'history',

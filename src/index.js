@@ -1,10 +1,12 @@
 import '../packages/icons'
 import QFloating from '../packages/floating/Floating.vue'
 import QDrawer from '../packages/drawer/Drawer.vue'
+import ConditionFilter from '../packages/filter/ConditionFilter.vue'
 
 const components = [
   QFloating,
-  QDrawer
+  QDrawer,
+  ConditionFilter
 ]
 
 const install = (Vue, options = {}) => {
@@ -21,5 +23,6 @@ export default {
   version: '1.0.0',
   install,
   QFloating,
-  QDrawer
+  QDrawer,
+  ConditionFilter
 }

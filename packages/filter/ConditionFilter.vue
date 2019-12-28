@@ -20,6 +20,20 @@
 
 <script>
 export default {
-  
+  name: 'ConditionFilter',
+  data () {
+    return {}
+  },
+  props: {
+    searchData: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
+  methods: {
+    handleChange () {}
+  }
 }
 </script>
