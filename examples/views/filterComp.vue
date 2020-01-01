@@ -1,6 +1,6 @@
 <template>
   <div class="filter">
-    <condition-filter></condition-filter>
+    <q-filter></q-filter>
   </div>
 </template>
 

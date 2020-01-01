@@ -1,14 +1,15 @@
 import '../packages/icons'
-import QFloating from '../packages/floating/Floating.vue'
-import QDrawer from '../packages/drawer/Drawer.vue'
-import ConditionFilter from '../packages/filter/ConditionFilter.vue'
+import QFloating from '../packages/floating/index.js'
+import QDrawer from '../packages/drawer/index.js'
+import QFilter from '../packages/filter/index.js'
 
 const components = [
   QFloating,
   QDrawer,
-  ConditionFilter
+  QFilter
 ]
 
+// eslint-disable-next-line no-unused-vars
 const install = (Vue, options = {}) => {
   components.forEach(component => {
     Vue.component(component.name, component)
@@ -16,7 +17,7 @@ const install = (Vue, options = {}) => {
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue)
+  install(window.Vue)
 }
 
 export default {
@@ -24,5 +25,5 @@ export default {
   install,
   QFloating,
   QDrawer,
-  ConditionFilter
+  QFilter
 }

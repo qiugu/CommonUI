@@ -29,7 +29,7 @@ export default {
   props: {
     width: {
       type: String,
-      default: "320px"
+      default: '320px'
     },
     rate: {
       type: Number,
@@ -46,11 +46,11 @@ export default {
   },
   mounted() {
     this.initFloat();
-    window.addEventListener("resize", this.resizeHandle);
+    window.addEventListener('resize', this.resizeHandle);
   },
   destroyed() {
     this.timer && clearInterval(this.timer);
-    window.removeEventListener("resize", this.resizeHandle);
+    window.removeEventListener('resize', this.resizeHandle);
   },
   methods: {
     initFloat() {
@@ -92,22 +92,18 @@ export default {
     // mounseenter event
     mounseenter(e) {
       this.timer && clearInterval(this.timer);
-      this.$emit("enter", e);
+      this.$emit('enter', e);
     },
     mouseleave(e) {
       this.initFloat();
-      this.$emit("leave", e);
+      this.$emit('leave', e);
     },
     // close window event
-    closeHandler (e) {
+    closeHandler(e) {
       this.visible = false;
       this.timer && clearInterval(this.timer);
-      this.$emit("close", e);
+      this.$emit('close', e);
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-@import "./floating.scss";
-</style>

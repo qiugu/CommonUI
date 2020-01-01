@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       navs: [
         { name: '主页', url: 'home' },
@@ -70,7 +70,8 @@ export default {
         li {
           height: 40px;
           line-height: 40px;
-          &.active > a {
+          &.active > a,
+          &:hover > a {
             color: #409eff;
           }
           a {

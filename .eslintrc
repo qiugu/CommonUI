@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "elemefe",
+    "plugin:vue/essential"
+  ],
+  "rules": {
+    "semi": "off"
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 6
+  },
+  "plugins": [
+    "html","json"
+  ]
+}

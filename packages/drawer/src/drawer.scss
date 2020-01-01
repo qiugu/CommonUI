@@ -1,4 +1,3 @@
-//  按钮抽屉的按钮部分动画
 @keyframes drawerBtn {
   0% { transform: translateX(100%); }
   100% { transform: translateX(0); }
@@ -15,7 +14,6 @@
 .drawer-out-icon-leave-active {
   animation: drawerBtn .3s reverse;
 }
-// 按钮抽屉的内容部分动画
 @keyframes drawerAnimate {
   0% { transform: translateX(100%); }
   100% { transform: translateX(0); }

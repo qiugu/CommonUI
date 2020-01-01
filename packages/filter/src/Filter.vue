@@ -20,20 +20,20 @@
 
 <script>
 export default {
-  name: 'ConditionFilter',
-  data () {
+  name: 'QFilter',
+  data() {
     return {}
   },
   props: {
     searchData: {
       type: Array,
-      default () {
+      default() {
         return []
       }
     }
   },
   methods: {
-    handleChange () {}
+    handleChange() {}
   }
 }
 </script>
