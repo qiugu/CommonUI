@@ -1,3 +1,4 @@
+
 import '../packages/icons'
 import QFloating from '../packages/floating/index.js'
 import QDrawer from '../packages/drawer/index.js'
@@ -21,7 +22,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.0',
+  version: '1.0.3',
   install,
   QFloating,
   QDrawer,

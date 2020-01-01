@@ -1,0 +1,5 @@
+{
+  "QFloating": "../packages/floating/index.js",
+  "QDrawer": "../packages/drawer/index.js",
+  "QFilter": "../packages/filter/index.js"
+}
