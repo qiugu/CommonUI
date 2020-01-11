@@ -10,8 +10,7 @@
             :key="tag.value"
             :type="item.type"
             :name="tag.name"
-            v-model="item.checked"
-            @change="(e) => handleChange(tag, e)"
+            @change="(e) => handleChange(tag, e, item.type)"
           />
           <span>{{ tag.label }}</span>
         </label>
@@ -36,10 +35,35 @@ export default {
       }
     }
   },
+  created() {
+    // 初始化选中的条件
+    this.searchData.forEach(item => {
+      this.$set(this.isChecked, item.tags[0].name, item.tags[0].value)
+    })
+  },
   methods: {
-    handleChange(tag, e) {
-      this.isChecked[tag.name] = e.target.value
-      console.log(e)
+    handleChange(tag, e, type) {
+      // TODO 判断每项的类型，需要优化
+      if (type === 'checkbox') {
+        if (!this.isChecked[tag.name]) {
+          this.$set(this.isChecked, tag.name, e.target.value)
+        } else {
+          this.$delete(this.isChecked, tag.name)
+        }
+      } else {
+        this.$set(this.isChecked, tag.name, e.target.value)
+      }
+      // const selectData = []
+      // this.searchData.forEach((item, index) => {
+      //   item.tags.forEach(tag => {
+      //     for (const key in this.isChecked) {
+      //       if (tag.name === key) {
+      //         selectData.push(tag)
+      //       }
+      //     }
+      //   })
+      // })
+      // console.log(selectData)
     }
   }
 }

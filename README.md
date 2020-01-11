@@ -5,7 +5,7 @@
 npm install business-ui --save
 ```
 
-### Usage
+## Usage
 ```javascript
 import Vue from 'vue'
 import businessui from 'businessui'
@@ -13,11 +13,13 @@ import businessui from 'businessui'
 Vue.use(businessui)
 ```
 
-### Description
+## Description
 记录常用的一些原生vue业务组件，目前还在初级阶段，组件名字暂定，如果有小伙伴有疑问可以联系我，也可以加入我一起来写自己的组件库。
 
-### Components
-#### floating
+## Components
+### floating
+
+#### 组件Props
 属性|描述|类型
 -|-|-
 floatingBodyClass|悬浮窗的样式|string
@@ -26,12 +28,30 @@ enter|输入移入浮窗的事件|function
 leave|输入移出浮窗的事件|function
 close|点击关闭浮窗的回调|function
 
-#### drawer
+### drawer
+
+#### 组件Props
 属性|描述|默认
 -|-|-
 customContainerClass|抽屉的容器样式|object
 open-drawer|打开抽屉的回调|function
 close-drawer|关闭抽屉的回调|function
+
+### filter
+#### 组件Props
+属性|描述|默认
+-|-|-
+searchData|需要进行筛选的条件数据|object
+searchData.name|每项筛选的名称|string
+searchData.type|每项筛选的类型，可以为单选或者多选|'radio' || 'checkbox'
+searchData.tags|每项筛选的具体条目|array
+
+#### tags中的属性
+属性|描述|默认
+-|-|-
+name|筛选条目的名称，同radio和checkbox的name|string
+label|筛选条目的显示名称|string
+value|每项筛选的传值，注意同一tags中value值不能相等，必须为不同的值|string
 
 ### Changelog
 * 2019-11-24 浮窗组件添加关闭，鼠标移入移出回调功能
