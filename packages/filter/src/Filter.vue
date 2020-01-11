@@ -1,17 +1,19 @@
 <template>
-  <div class="screen">
-    <div v-for="(item, index) in searchData" :key="index" class="screen-type">
+  <div class="qbs-filter">
+    <div v-for="(item, index) in searchData" :key="index" class="filter-type">
       <strong :style="{ marginRight: '20px' }">{{ item.name }}</strong>
       <template v-for=" tag in item.tags">
-        <label :key="tag.value">
+        <label :key="tag.value" class="filter-label" :class="{ 'is-checked': tag.value === isChecked[tag.name] }">
           <input
+            class="selects"
             :value="tag.value"
             :key="tag.value"
-            :type="type"
-            :name="tag.type"
-            @change="(checked) => handleChange(tag, checked)"
+            :type="item.type"
+            :name="tag.name"
+            v-model="item.checked"
+            @change="(e) => handleChange(tag, e)"
           />
-          <span :class="{ 'is-checked': isChecked }">{{ tag.label }}</span>
+          <span>{{ tag.label }}</span>
         </label>
       </template>
     </div>
@@ -22,7 +24,9 @@
 export default {
   name: 'QFilter',
   data() {
-    return {}
+    return {
+      isChecked: {}
+    }
   },
   props: {
     searchData: {
@@ -33,7 +37,10 @@ export default {
     }
   },
   methods: {
-    handleChange() {}
+    handleChange(tag, e) {
+      this.isChecked[tag.name] = e.target.value
+      console.log(e)
+    }
   }
 }
 </script>

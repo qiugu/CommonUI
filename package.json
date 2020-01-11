@@ -10,7 +10,7 @@
   "main": "lib/main.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.demo.js",
-    "dist": "npm run lint && webpack --config build/webpack.component.js",
+    "dist": "npm run lint && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js",
     "lint": "eslint src/**/* packages/**/* build/**/* --fix",
     "build:entry": "node build/bin/gen-entry.js && npm run lint"
   },
@@ -70,5 +70,6 @@
       "git add"
     ]
   },
-  "homepage": "https://github.com/qiugu/CommonUI"
+  "homepage": "https://github.com/qiugu/CommonUI",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }

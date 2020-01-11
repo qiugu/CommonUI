@@ -1,0 +1,30 @@
+.qbs-filter {
+  .filter-type {
+    background: #f2f2f2;
+    padding: 6px 20px;
+    margin: 8px;
+    .filter-label {
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      margin-right: 8px;
+      background: #fff;
+      cursor: pointer;
+      box-sizing: border-box;
+      &.is-checked {
+        background: #1890ff;
+        border: 1px solid #1890ff;
+        color: #fff;
+      }
+      input {
+        opacity: 0;
+        position: absolute;
+      }
+    }
+  }
+}

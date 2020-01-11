@@ -1,13 +1,14 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const Components = require('../components.json')
 
 module.exports = {
   mode: 'production',
-  entry: Components,
+  entry: {
+    app: path.resolve(__dirname, '../src/index.js')
+  },
   output: {
-    filename: '[name].js',
+    filename: 'business.common.js',
     chunkFilename: '[id].js',
     publicPath: '/dist/',
     path: path.resolve(process.cwd(), './lib'),
