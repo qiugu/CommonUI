@@ -33,13 +33,16 @@ export default {
       default() {
         return []
       }
+    },
+    select: {
+      type: Function
     }
   },
   created() {
     // 初始化选中的条件
-    this.searchData.forEach(item => {
-      this.$set(this.isChecked, item.tags[0].name, item.tags[0].value)
-    })
+    // this.searchData.forEach(item => {
+    //   this.$set(this.isChecked, item.tags[0].name, item.tags[0].value)
+    // })
   },
   methods: {
     handleChange(tag, e, type) {
@@ -53,17 +56,20 @@ export default {
       } else {
         this.$set(this.isChecked, tag.name, e.target.value)
       }
-      // const selectData = []
-      // this.searchData.forEach((item, index) => {
-      //   item.tags.forEach(tag => {
-      //     for (const key in this.isChecked) {
-      //       if (tag.name === key) {
-      //         selectData.push(tag)
-      //       }
-      //     }
-      //   })
-      // })
-      // console.log(selectData)
+      const temp = []
+      const ret = []
+
+      this.searchData.forEach(list => {
+        temp.push(...list.tags)
+      })
+      Object.keys(this.isChecked).forEach(item => {
+        temp.forEach(tag => {
+          if (tag.name === item && tag.value === this.isChecked[item]) {
+            ret.push(tag)
+          }
+        })
+      })
+      this.$emit('select', ret)
     }
   }
 }

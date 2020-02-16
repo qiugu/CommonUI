@@ -1,6 +1,6 @@
 <template>
   <div class="filter">
-    <q-filter :searchData="searchData" />
+    <q-filter :searchData="searchData" @select="selecedData" />
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
           name: '类型',
           type: 'radio',
           tags: [
+            {
+              name: 'computer',
+              label: '不限',
+              value: '0'
+            },
             {
               name: 'computer',
               label: '台式机',
@@ -72,6 +77,11 @@ export default {
           tags: [
             {
               name: 'price',
+              label: '不限',
+              value: '13'
+            },
+            {
+              name: 'price',
               label: '4000元以下',
               value: '10'
             },
@@ -93,28 +103,33 @@ export default {
           tags: [
             {
               name: 'memory',
-              label: '4G',
-              value: '13'
+              label: '不限',
+              value: '19'
             },
             {
               name: 'memory',
-              label: '8G',
+              label: '4G',
               value: '14'
             },
             {
               name: 'memory',
-              label: '16G',
+              label: '8G',
               value: '15'
             },
             {
               name: 'memory',
-              label: '32G',
+              label: '16G',
               value: '16'
             },
             {
               name: 'memory',
-              label: '64G',
+              label: '32G',
               value: '17'
+            },
+            {
+              name: 'memory',
+              label: '64G',
+              value: '18'
             }
           ]
         },
@@ -124,32 +139,42 @@ export default {
           tags: [
             {
               name: 'disk',
-              label: '512G',
-              value: '18'
-            },
-            {
-              name: 'disk',
-              label: '1T',
+              label: '不限',
               value: '19'
             },
             {
               name: 'disk',
-              label: '2T',
+              label: '512G',
               value: '20'
             },
             {
               name: 'disk',
-              label: '3T',
+              label: '1T',
               value: '21'
             },
             {
               name: 'disk',
-              label: '4T',
+              label: '2T',
               value: '22'
+            },
+            {
+              name: 'disk',
+              label: '3T',
+              value: '23'
+            },
+            {
+              name: 'disk',
+              label: '4T',
+              value: '24'
             }
           ]
         }
       ]
+    }
+  },
+  methods: {
+    selecedData(data) {
+      console.log(data)
     }
   }
 }

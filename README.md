@@ -52,6 +52,7 @@ searchData.tags|每项筛选的具体条目|array
 name|筛选条目的名称，同radio和checkbox的name|string
 label|筛选条目的显示名称|string
 value|每项筛选的传值，注意同一tags中value值不能相等，必须为不同的值|string
+select|每次选中一个条目，会返回选中的项，选中的项为该事件函数的参数|function
 
 ### Changelog
 * 2019-11-24 浮窗组件添加关闭，鼠标移入移出回调功能
@@ -63,3 +64,4 @@ value|每项筛选的传值，注意同一tags中value值不能相等，必须�
 * 2019-12-28 demo示例修改
 * 2020-01-01 添加eslint以及入口文件生成的脚本，入口文件缩进问题待修复
 * 2020-01-11 添加filter组件，构造选中的数据功能待完成
+* 2020-02-16 filter组件添加事件监听，返回选中的数组
