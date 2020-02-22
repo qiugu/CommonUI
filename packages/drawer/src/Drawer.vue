@@ -1,6 +1,6 @@
 <template>
   <div
-    class="drawer-container"
+    class="bui_drawer_container"
     ref="container"
     :style="customContainerClass"
   >
@@ -9,7 +9,7 @@
       mode="out-in"
     >
       <span
-        class="drawer-icon right"
+        class="bui_drawer_icon right"
         ref="rightBtn"
         @click="showDrawer"
         :style="{ right: `${offsetRight}px` }"
@@ -23,7 +23,7 @@
       mode="out-in"
     >
       <span
-        class="drawer-icon left"
+        class="bui_drawer_icon left"
         ref="leftBtn"
         @click="showDrawer"
         :style="{ right: `${offsetLeft}px` }"
@@ -34,7 +34,7 @@
     </transition>
     <transition name="drawer-content">
       <div
-        class="drawer-content-wrapper"
+        class="bui_drawer_content_wrapper"
         v-show="drawerVisible"
       >
         <slot></slot>

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="visible"
-    class="common-floating-container"
+    class="bui_floating_container"
     :class="floatingBodyClass"
     @mouseenter="mounseenter"
     @mouseleave="mouseleave"

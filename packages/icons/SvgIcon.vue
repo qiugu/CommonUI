@@ -26,9 +26,9 @@ export default {
     },
     svgClass() {
       if (this.className) {
-        return 'q-icon' + this.className
+        return 'bui_icon' + this.className
       } else {
-        return 'q-icon'
+        return 'bui_icon'
       }
     }
   }
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.q-icon {
+.bui_icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;

@@ -1,9 +1,13 @@
 <template>
-  <div class="qbs-filter">
-    <div v-for="(item, index) in searchData" :key="index" class="filter-type">
+  <div class="bui_filter">
+    <div v-for="(item, index) in searchData" :key="index" class="bui_filter_type">
       <strong :style="{ marginRight: '20px' }">{{ item.name }}</strong>
       <template v-for=" tag in item.tags">
-        <label :key="tag.value" class="filter-label" :class="{ 'is-checked': tag.value === isChecked[tag.name] }">
+        <label
+          :key="tag.value"
+          class="bui_filter_label"
+          :class="{ 'is-checked': tag.value === isChecked[tag.name] }"
+        >
           <input
             class="selects"
             :value="tag.value"
@@ -25,13 +29,13 @@ export default {
   data() {
     return {
       isChecked: {}
-    }
+    };
   },
   props: {
     searchData: {
       type: Array,
       default() {
-        return []
+        return [];
       }
     },
     select: {
@@ -49,28 +53,28 @@ export default {
       // TODO 判断每项的类型，需要优化
       if (type === 'checkbox') {
         if (!this.isChecked[tag.name]) {
-          this.$set(this.isChecked, tag.name, e.target.value)
+          this.$set(this.isChecked, tag.name, e.target.value);
         } else {
-          this.$delete(this.isChecked, tag.name)
+          this.$delete(this.isChecked, tag.name);
         }
       } else {
-        this.$set(this.isChecked, tag.name, e.target.value)
+        this.$set(this.isChecked, tag.name, e.target.value);
       }
-      const temp = []
-      const ret = []
+      const temp = [];
+      const ret = [];
 
       this.searchData.forEach(list => {
-        temp.push(...list.tags)
-      })
+        temp.push(...list.tags);
+      });
       Object.keys(this.isChecked).forEach(item => {
         temp.forEach(tag => {
           if (tag.name === item && tag.value === this.isChecked[item]) {
-            ret.push(tag)
+            ret.push(tag);
           }
-        })
-      })
-      this.$emit('select', ret)
+        });
+      });
+      this.$emit('select', ret);
     }
   }
-}
+};
 </script>
