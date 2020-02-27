@@ -6,7 +6,7 @@
     </div>
     <div class="main-container">
       <div class="sidebar">
-        <h2>组件</h2>
+        <h2 class="component-title">组件</h2>
         <ul>
           <li v-for="(item, index) in navs" :key="index" :class="{ 'active': item.url === $route.name }">
             <router-link :to="{ name: item.url }">{{item.name}}</router-link>
@@ -28,7 +28,8 @@ export default {
         { name: '主页', url: 'home' },
         { name: '浮窗', url: 'floating' },
         { name: '抽屉', url: 'drawer' },
-        { name: '筛选', url: 'filter' }
+        { name: '筛选', url: 'filter' },
+        { name: '列表', url: 'list' }
       ]
     }
   }
@@ -64,6 +65,9 @@ export default {
       width: 240px;
       height: 100%;
       overflow-y: auto;
+      .component-title {
+        color: #273849;
+      }
       ul {
         padding: 0;
         list-style: none;
@@ -72,10 +76,10 @@ export default {
           line-height: 40px;
           &.active > a,
           &:hover > a {
-            color: #409eff;
+            color: #42b983;
           }
           a {
-            color: #444;
+            color: #304455;
             text-decoration: none;
           }
         }

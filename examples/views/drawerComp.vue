@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is a drawer component</h1>
+    <h1 style="color: #273849">This is a drawer component</h1>
     <q-drawer @open-drawer="handleOpen" @close-drawer="handleClose" :customContainerClass="containerClass">
       <div><button>在线客服1</button></div>
       <div><button>在线客服2</button></div>

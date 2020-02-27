@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Welcome to BusinessUI</h1>
+    <h1 style="color: #273849">Welcome to BusinessUI</h1>
   </div>
 </template>
 

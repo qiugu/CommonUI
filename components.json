@@ -1,5 +1,6 @@
 {
-  "q-floating": "./packages/floating/index.js",
-  "q-drawer": "./packages/drawer/index.js",
-  "q-filter": "./packages/filter/index.js"
+  "QFloating": "../packages/floating/index.js",
+  "QDrawer": "../packages/drawer/index.js",
+  "QFilter": "../packages/filter/index.js",
+  "QList": "../packages/list/index.js"
 }

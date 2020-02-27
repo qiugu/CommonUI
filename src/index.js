@@ -3,11 +3,13 @@ import '../packages/icons'
 import QFloating from '../packages/floating/index.js'
 import QDrawer from '../packages/drawer/index.js'
 import QFilter from '../packages/filter/index.js'
+import QList from '../packages/list/index.js'
 
 const components = [
   QFloating,
   QDrawer,
-  QFilter
+  QFilter,
+  QList
 ]
 
 // eslint-disable-next-line no-unused-vars
@@ -22,9 +24,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.3',
+  version: '1.0.4',
   install,
   QFloating,
   QDrawer,
-  QFilter
+  QFilter,
+  QList
 }

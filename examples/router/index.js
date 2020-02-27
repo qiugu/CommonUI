@@ -14,7 +14,7 @@ const routes = [
       {
         path: '/home',
         name: 'home',
-        component: () => import(/* webpackChunkName: 'floating' */'../views/Home.vue'),
+        component: () => import(/* webpackChunkName: 'floating' */'../views/Home.vue')
       },
       {
         path: '/floating',
@@ -31,6 +31,11 @@ const routes = [
         name: 'filter',
         component: () => import(/* webpackChunkName: 'filter' */'../views/filterComp.vue')
       },
+      {
+        path: '/list',
+        name: 'list',
+        component: () => import(/* webpackChunkName: 'list' */'../views/listComp.vue')
+      }
     ]
   }
 ]
@@ -38,7 +43,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   // base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is a floating component</h1>
+    <h1 style="color: #273849">This is a floating component</h1>
     <q-floating
       floatingBodyClass="floatingBodyClass"
       @enter="mounseenterHandle"
