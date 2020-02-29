@@ -55,7 +55,40 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          compilerOptions: {
+            preserveWhitespace: false
+          }
+        }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [path.resolve('packages/icons')],
+        options: {
+          symbolId: 'icon-[name]'
+        }
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              }
+            }
+          },
+          {
+            loader: path.resolve(__dirname, './md-loader/index.js')
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
         exclude: [path.resolve('packages/icons')],
         use: [
           {
@@ -67,33 +100,6 @@ module.exports = {
                 options: {
                   name: 'img/[name].[hash:8].[ext]'
                 }
-              }
-            }
-          }
-        ]
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-sprite-loader',
-        include: [path.resolve('packages/icons')],
-        options: {
-          symbolId: 'icon-[name]'
-        }
-      },
-      {
-        test: /\.vue$/,
-        use: [
-          {
-            loader: 'cache-loader'
-          },
-          {
-            loader: 'thread-loader'
-          },
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false
               }
             }
           }

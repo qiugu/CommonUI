@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       navs: [
-        { name: '主页', url: 'home' },
+        { name: '安装', url: 'home' },
         { name: '浮窗', url: 'floating' },
         { name: '抽屉', url: 'drawer' },
         { name: '筛选', url: 'filter' },
