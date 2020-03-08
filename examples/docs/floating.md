@@ -1,6 +1,44 @@
-### floating
+## Floating组件
+用于展示一些广告宣传功能
 
-#### 组件Props
+### 基本用法
+```html
+<template>
+  <div class="about">
+    <h1 style="color: #273849">This is a floating component</h1>
+    <q-floating
+      floatingBodyClass="floatingBodyClass"
+      @enter="mounseenterHandle"
+      @leave="mounseleaveHandle"
+      @close="closeWindow"
+    >
+      <img src="../assets/logo.png" alt="logo">
+    </q-floating>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {}
+  },
+  methods: {
+    mounseenterHandle(e) {
+      console.log(e);
+    },
+    mounseleaveHandle(e) {
+      console.log(e);
+    },
+    closeWindow (e) {
+      console.log(e)
+    }
+  }
+};
+</script>
+
+```
+
+### 组件Props
 属性|描述|类型
 -|-|-
 floatingBodyClass|悬浮窗的样式|string

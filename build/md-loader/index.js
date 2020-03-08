@@ -1,7 +1,6 @@
-const md = require('markdown-it')()
+const md = require('./config')
 
 module.exports = function(source) {
-  console.log('loader----------------------------')
   const content = md.render(source)
   return `
     <template>
