@@ -107,6 +107,9 @@ module.exports = {
       }
     ]
   },
+  performance: {
+    hints: false
+  },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({

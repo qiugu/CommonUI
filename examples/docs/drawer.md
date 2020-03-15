@@ -1,10 +1,10 @@
 ## Drawer组件
 
 ### 基本用法
+::: demo
 ```html
 <template>
   <div>
-    <h1 style="color: #273849">This is a drawer component</h1>
     <q-drawer @open-drawer="handleOpen" @close-drawer="handleClose" :customContainerClass="containerClass">
       <div><button>在线客服1</button></div>
       <div><button>在线客服2</button></div>
@@ -35,6 +35,7 @@ export default {
 }
 </script>
 ```
+:::
 
 ### 组件Props
 属性|描述|默认

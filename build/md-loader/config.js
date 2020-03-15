@@ -1,5 +1,7 @@
 const Config = require('markdown-it-chain')
 const Anchor = require('markdown-it-anchor')
+const containers = require('./containers')
+const overrideFence = require('./fence')
 
 const config = new Config()
 config
@@ -12,6 +14,9 @@ config
     }
   ]).end()
 
+  .plugin('containers').use(containers).end()
+
 const md = config.toMd()
+overrideFence(md)
 
 module.exports = md

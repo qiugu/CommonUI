@@ -2,17 +2,18 @@
 用于展示一些广告宣传功能
 
 ### 基本用法
+
+:::demo
 ```html
 <template>
-  <div class="about">
-    <h1 style="color: #273849">This is a floating component</h1>
+  <div class="about"> 
     <q-floating
       floatingBodyClass="floatingBodyClass"
       @enter="mounseenterHandle"
       @leave="mounseleaveHandle"
       @close="closeWindow"
     >
-      <img src="../assets/logo.png" alt="logo">
+      <img :src="src" alt="logo" style="width: 100%;">
     </q-floating>
   </div>
 </template>
@@ -20,14 +21,17 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      src: require('../assets/images/floating-bg.jpg')
+    }
   },
   methods: {
     mounseenterHandle(e) {
-      console.log(e);
+      console.log(e)
+      console.log(__dirname)
     },
     mounseleaveHandle(e) {
-      console.log(e);
+      console.log(e)
     },
     closeWindow (e) {
       console.log(e)
@@ -35,8 +39,8 @@ export default {
   }
 };
 </script>
-
 ```
+:::
 
 ### 组件Props
 属性|描述|类型

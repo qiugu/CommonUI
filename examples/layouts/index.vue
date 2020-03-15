@@ -1,8 +1,13 @@
 <template>
   <div class="layouts">
     <div class="navbar">
-      <img src="../assets/logo.png" alt="logo" class="logo">
-      <span>BUSINESSUI</span>
+      <div>
+        <img src="../assets/images/logo.png" alt="logo" class="logo">
+        <span>BUSINESSUI</span>
+      </div>
+      <div>
+        <a href="https://github.com/qiugu/CommonUI" target="_blank">GITHUB</a>
+      </div>
     </div>
     <div class="main-container">
       <div class="sidebar">
@@ -35,60 +40,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.layouts {
-  height: 100%;
-  .navbar {
-    width: 1140px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0 auto;
-    border-bottom: 1px solid #dcdfe6;
-    & > .logo {
-      width: 38px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-    & > span {
-      font-size: 20px;
-      font-weight: 700;
-    }
-  }
-  .main-container {
-    display: flex;
-    width: 1140px;
-    height: calc(100% - 80px);
-    margin: 0 auto;
-    .sidebar {
-      width: 240px;
-      height: 100%;
-      overflow-y: auto;
-      .component-title {
-        color: #273849;
-      }
-      ul {
-        padding: 0;
-        list-style: none;
-        li {
-          height: 40px;
-          line-height: 40px;
-          &.active > a,
-          &:hover > a {
-            color: #42b983;
-          }
-          a {
-            color: #304455;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-    .content {
-      flex: 1;
-      padding: 20px 0;
-    }
-  }
-}
-</style>
